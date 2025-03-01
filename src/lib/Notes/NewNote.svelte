@@ -2,7 +2,7 @@
 <div class="bg-white text-black font-mono min-h-screen flex flex-col items-center">
 
 
-  <div class="w-full max-w-xl border-2 border-black p-6 mt-10">
+  <div class="w-full max-w-xl p-6 mt-10">
 
     
     <div class="border-b-2 border-black pb-4 mb-4">
@@ -101,6 +101,23 @@
       </div>
     </div>
 
+    <div class="flex flex-col mb-4">
+        <label for="minutes" class="mb-1 text-xs font-bold uppercase">password</label>
+        <input
+          type="text"
+          id="minutes"
+          class="w-full border-black border-2 p-2.5 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] focus:bg-[#FFA6F6] active:shadow-[2px_2px_0px_rgba(0,0,0,1)]"
+        />
+      </div>
+
+      <div class="flex flex-col mb-4">
+        <label for="minutes" class="mb-1 text-xs font-bold uppercase">allowed ip</label>
+        <input
+          type="text"
+          id="minutes"
+          class="w-full border-black border-2 p-2.5 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] focus:bg-[#FFA6F6] active:shadow-[2px_2px_0px_rgba(0,0,0,1)]"
+        />
+      </div>
 
     <button class="w-full h-12 border-black border-2 p-2.5 bg-[#A6FAFF] hover:bg-[#79F7FF] hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-[#00E1EF]">
       create
@@ -109,9 +126,9 @@
 
  
   <div class="mt-6 flex items-center space-x-6 text-sm font-bold">
-    <a href="#" class="border-2 border-black px-2 py-1 hover:bg-black hover:text-white transition-colors">home</a>
-    <a href="#" class="border-2 border-black px-2 py-1 hover:bg-black hover:text-white transition-colors">about</a>
-    <a href="#" class="border-2 border-black px-2 py-1 hover:bg-black hover:text-white transition-colors">code</a>
+    <a href="/" class="border-2 border-black px-2 py-1 hover:bg-black hover:text-white transition-colors">home</a>
+    <a href="/about" class="border-2 border-black px-2 py-1 hover:bg-black hover:text-white transition-colors">about</a>
+    <a href="https://github.com/incatswetrust/whisper-frontend" class="border-2 border-black px-2 py-1 hover:bg-black hover:text-white transition-colors">code</a>
 
     
   </div>
