@@ -69,9 +69,10 @@
         <input
           type="number"
           id="views"
-          class="{isMinutes? 'disabled' : ''} w-32 border-black border-2 p-2.5 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] focus:bg-[#FFA6F6] active:shadow-[2px_2px_0px_rgba(0,0,0,1)]"
+          class="w-32 border-black border-2 p-2.5 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] focus:bg-[#FFA6F6] active:shadow-[2px_2px_0px_rgba(0,0,0,1)] disabled:border-1"
           value="1"
           min="1"
+          disabled={isMinutes}
         />
       </div>
       <div class="flex flex-col">
@@ -99,9 +100,10 @@
         <input
           type="number"
           id="minutes"
-          class="{isMinutes? '' : 'disabled'} w-32 border-black border-2 p-2.5 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] focus:bg-[#FFA6F6] active:shadow-[2px_2px_0px_rgba(0,0,0,1)]"
+          class="disabled:border-1 w-32 border-black border-2 p-2.5 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] focus:bg-[#FFA6F6] active:shadow-[2px_2px_0px_rgba(0,0,0,1)]"
           value="60"
           min="1"
+          disabled={!isMinutes}
         />
       </div>
     </div>
