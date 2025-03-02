@@ -1,4 +1,7 @@
-
+<script lang="ts">
+    let IsAdvanced: boolean = false;
+    let isMinutes: boolean = false;
+</script>
 <div class="bg-white text-black font-mono min-h-screen flex flex-col items-center">
 
 
@@ -34,7 +37,7 @@
   
     <div class="flex items-center space-x-6 mb-4">
         <label class="flex items-center space-x-2">
-            <input 
+            <input bind:checked={IsAdvanced}
               type="checkbox"
               class="peer appearance-none w-5 h-5 border-2 border-black 
                      hover:shadow-[2px_2px_0px_rgba(0,0,0,1)]
@@ -54,9 +57,11 @@
 
    
     <div class="mb-4 text-sm">
-      <p>the note will expire and be destroyed after <span class="font-bold">60 minutes</span></p>
+      <p>the note will expire and be destroyed after <span class="font-bold">1 view</span></p>
     </div>
 
+
+    {#if IsAdvanced}
 
     <div class="flex space-x-4 mb-4">
       <div class="flex flex-col">
@@ -64,14 +69,14 @@
         <input
           type="number"
           id="views"
-          class="w-32 border-black border-2 p-2.5 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] focus:bg-[#FFA6F6] active:shadow-[2px_2px_0px_rgba(0,0,0,1)]"
+          class="{isMinutes? 'disabled' : ''} w-32 border-black border-2 p-2.5 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] focus:bg-[#FFA6F6] active:shadow-[2px_2px_0px_rgba(0,0,0,1)]"
           value="1"
           min="1"
         />
       </div>
       <div class="flex flex-col">
       <label class="my-auto relative inline-flex items-center mb-5 cursor-pointer">
-        <input type="checkbox" value="" class="sr-only peer" />
+        <input bind:checked={isMinutes} type="checkbox" value="" class="sr-only peer" />
         <div
         class="w-11 h-6 bg-gray-400 border-2 border-black bg-pink-300 shadow-[2px_2px_0px_rgba(0,0,0,1)] 
             after:content-[''] 
@@ -94,7 +99,7 @@
         <input
           type="number"
           id="minutes"
-          class="w-32 border-black border-2 p-2.5 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] focus:bg-[#FFA6F6] active:shadow-[2px_2px_0px_rgba(0,0,0,1)]"
+          class="{isMinutes? '' : 'disabled'} w-32 border-black border-2 p-2.5 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] focus:bg-[#FFA6F6] active:shadow-[2px_2px_0px_rgba(0,0,0,1)]"
           value="60"
           min="1"
         />
@@ -122,7 +127,9 @@
     <button class="w-full h-12 border-black border-2 p-2.5 bg-[#A6FAFF] hover:bg-[#79F7FF] hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-[#00E1EF]">
       create
     </button>
+    {/if}
   </div>
+  
 
  
   <div class="mt-6 flex items-center space-x-6 text-sm font-bold">
