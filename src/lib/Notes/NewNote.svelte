@@ -2,10 +2,13 @@
     let IsAdvanced: boolean = false;
     let isMinutes: boolean = false;
 </script>
+
+
+
 <div class="bg-white text-black font-mono min-h-screen flex flex-col items-center">
 
 
-  <div class="w-full max-w-xl p-6 mt-10">
+  <div class="w-full max-w-xl p-2 mt-2">
 
     
     <div class="border-b-2 border-black pb-4 mb-4">
@@ -34,26 +37,31 @@
       ></textarea>
     </div>
 
-  
-    <div class="flex items-center space-x-6 mb-4">
-        <label class="flex items-center space-x-2">
-            <input bind:checked={IsAdvanced}
-              type="checkbox"
-              class="peer appearance-none w-5 h-5 border-2 border-black 
-                     hover:shadow-[2px_2px_0px_rgba(0,0,0,1)]
-                     checked:bg-[#FF965B] checked:shadow-[2px_2px_0px_rgba(0,0,0,1)]" 
-            />
-            
-            
-            <span
-              class="pointer-events-none absolute left-1.5 top-0.5 w-2 h-3 
-                     border-r-2 border-b-2 border-black
-                     origin-center rotate-45 
-                     opacity-0 peer-checked:opacity-100">
-            </span>
+    <div class="flex flex-col">
+        <label class="my-auto relative inline-flex items-center mb-5 cursor-pointer space-x-2">
+            <input bind:checked={IsAdvanced} type="checkbox"  class="sr-only peer" />
+            <div
+            class="w-11 h-6 bg-gray-400 border-2 border-black bg-white shadow-[2px_2px_0px_rgba(0,0,0,1)] 
+                after:content-[''] 
+                after:absolute 
+                after:top-[4px] 
+                after:left-[4px] 
+                after:w-4 
+                after:h-4 
+                after:bg-white
+                after:border-2 
+                after:border-black 
+                after:transition-all 
+                peer-checked:after:translate-x-5 
+                peer-checked:bg-[#FF965B]
+            "
+            ></div>
             <span>advanced</span>
-          </label>
+        </label>
+        
     </div>
+  
+
 
    
     <div class="mb-4 text-sm">
@@ -76,24 +84,24 @@
         />
       </div>
       <div class="flex flex-col">
-      <label class="my-auto relative inline-flex items-center mb-5 cursor-pointer">
-        <input bind:checked={isMinutes} type="checkbox" value="" class="sr-only peer" />
-        <div
-        class="w-11 h-6 bg-gray-400 border-2 border-black bg-pink-300 shadow-[2px_2px_0px_rgba(0,0,0,1)] 
-            after:content-[''] 
-            after:absolute 
-            after:top-[4px] 
-            after:left-[4px] 
-            after:w-4 
-            after:h-4 
-            after:bg-white
-            after:border-2 
-            after:border-black 
-            after:transition-all 
-            peer-checked:after:translate-x-5 
-          "
-        ></div>
-      </label>
+        <label class="my-auto relative inline-flex items-center mb-5 cursor-pointer">
+            <input bind:checked={isMinutes} type="checkbox" value="" class="sr-only peer" />
+            <div
+            class="w-11 h-6 bg-gray-400 border-2 border-black bg-pink-300 shadow-[2px_2px_0px_rgba(0,0,0,1)] 
+                after:content-[''] 
+                after:absolute 
+                after:top-[4px] 
+                after:left-[4px] 
+                after:w-4 
+                after:h-4 
+                after:bg-white
+                after:border-2 
+                after:border-black 
+                after:transition-all 
+                peer-checked:after:translate-x-5 
+            "
+            ></div>
+        </label>
     </div>
       <div class="flex flex-col">
         <label for="minutes" class="mb-1 text-xs font-bold uppercase">minutes</label>
@@ -111,7 +119,7 @@
     <div class="flex flex-col mb-4">
         <label for="minutes" class="mb-1 text-xs font-bold uppercase">password</label>
         <input
-          type="text"
+          type="password"
           id="minutes"
           class="w-full border-black border-2 p-2.5 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] focus:bg-[#FFA6F6] active:shadow-[2px_2px_0px_rgba(0,0,0,1)]"
         />
@@ -126,21 +134,17 @@
         />
       </div>
 
+      {/if}
     <button class="w-full h-12 border-black border-2 p-2.5 bg-[#A6FAFF] hover:bg-[#79F7FF] hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-[#00E1EF]">
       create
     </button>
-    {/if}
+    
   </div>
   
 
  
-  <div class="mt-6 flex items-center space-x-6 text-sm font-bold">
-    <a href="/" class="border-2 border-black px-2 py-1 hover:bg-black hover:text-white transition-colors">home</a>
-    <a href="/about" class="border-2 border-black px-2 py-1 hover:bg-black hover:text-white transition-colors">about</a>
-    <a href="https://github.com/incatswetrust/whisper-frontend" class="border-2 border-black px-2 py-1 hover:bg-black hover:text-white transition-colors">code</a>
-
-    
-  </div>
+  
 
 </div>
+
 
